@@ -1,11 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Rose Art Classes</title>
+  <!--List of icons https://material.io/resources/icons/?style=baseline -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.3.8/dist/vuetify.min.css" rel="stylesheet">
+  <link href="./main.css" rel="stylesheet">
+  
 </head>
 <body>
-  Hi
+
+  <template id="about-template">
+    <v-container fluid grid-list-xl>
+      <v-layout>
+        <v-flex>
+          <h1>About</h1>
+          <p>This is about.</p>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </template>
+
+  <template id="home-template">
+    <v-container fluid grid-list-xl>
+      <v-layout>
+        <v-flex>
+          <h1>Home</h1>
+          <p>This is home.</p>
+          <div class="test-box"></div>  
+          <br>
+          <div class="test-box"></div>  
+          <br>
+          <div class="test-box"></div>  
+          <br>
+
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </template>
+
+
+  
+  <div id="app">
+    <v-app>
+
+      <v-app-bar app color="indigo" dark>
+        <v-toolbar-title>The Rose Art Classes</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn to="/" icon>
+          <v-icon>home</v-icon>
+        </v-btn>
+        <v-btn to="/about" icon>
+          <v-icon>info</v-icon>
+        </v-btn>
+      </v-app-bar>
+
+      <v-main>
+        <router-view></router-view>
+      </v-main>
+    </v-app>
+  </div>  
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.3.10/dist/vuetify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-router@3.4.3/dist/vue-router.min.js"></script>
+  <script src='main.js'></script>
 </body>
 </html>
