@@ -3,8 +3,7 @@ console.log('START');
 
 var store = {
   state: {
-    currentVideoFile: '',
-    data: {} // {videoList: [], }
+    myWorkImageFiles: []
   }
 }
 
@@ -13,9 +12,19 @@ const Home = Vue.component('Home', {
   data: function () {
     return {
       state: store.state,
+      myWorkDialog: false,
+      selectedMyWorkImageFile: 0
     }
   },
   methods: {
+    showMyWorkImage(index){
+      this.selectedMyWorkImageFile = '/images/my-work/' + this.state.myWorkImageFiles[index - 1];
+      this.myWorkDialog = true;
+    },
+    getMyWorkImage(index){
+      console.log('getMyWorkImage', index);
+      return '/images/my-work/' + this.state.myWorkImageFiles[index - 1];
+    }
   },
   mounted() {
     console.log('Home mounted');
@@ -89,9 +98,12 @@ function initVue(){
 }
 
 async function init(){
-  // var fakeList = await fetch('/api/getFakeList').then(r => r.json()); 
+  var txt = await fetch('/images/my-work-files.txt').then(r => r.text()); 
+  var myWorkImageFiles = txt.split('\n');
+  console.log({myWorkImageFiles});
+  store.state = {...(store.state), myWorkImageFiles};
+
   // // var data = await fetch('data.json').then(r => r.json());
-  // console.log({fakeList})
   // store.state = {...(store.state), fakeList};
   initVue();
   // setTimeout(async () => {

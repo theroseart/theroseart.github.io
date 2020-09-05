@@ -99,10 +99,82 @@
                 </v-card-text>
               </v-card>
             </v-col>
-
-
           </v-row>
 
+          <v-row>
+            <v-col cols="12" Xsm="6" Xoffset-sm="3"  class="mt-md-10 mb-md-10">
+              <h3 class="ml-md-3">Artistic creations of the teacher</h3>
+              <v-card>
+                <v-container fluid>
+                  <v-row>
+                    <v-col
+                      v-for="n in state.myWorkImageFiles.length"
+                      :key="n"
+                      class="d-flex child-flex"
+                      cols="2"
+                    >
+                      <v-card flat tile class="d-flex">
+                        <v-img
+                          :src="getMyWorkImage(n)"
+                          :lazy-src="getMyWorkImage(n)"
+                          Xaspect-ratio="1"
+                          class="grey lighten-2 my-work-img"
+                          @click.stop="showMyWorkImage(n)"
+                        >
+                          <template v-slot:placeholder>
+                            <v-row
+                              Xclass="fill-height ma-0"
+                              Xalign="center"
+                              Xjustify="center"
+                            >
+                              <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                            </v-row>
+                          </template>
+                        </v-img>
+                      </v-card>
+                    </v-col>
+                  </v-row>
+
+
+                  <v-dialog v-model="myWorkDialog" max-width="800">
+                  <v-card>
+                    <v-img :src="selectedMyWorkImageFile"></v-img>
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+                      <v-btn
+                        color="green darken-1"
+                        text
+                        @click="myWorkDialog = false"
+                      >
+                        Close
+                      </v-btn>
+                    </v-card-actions>
+                  </v-card>
+                </v-dialog>
+
+                </v-container>
+              </v-card>
+            </v-col>
+          </v-row>
+
+
+
+          <!-- <v-row class="ml-md-10">
+            <h1>Meet the teacher</h1>
+            <v-carousel hide-delimiters progress continuous
+            height="200px" progress-color="red">
+              
+              <v-carousel-item
+                reverse-transition="fade-transition"
+                
+                transition="fade-transition"
+                v-for="(item,i) in state.myWorkImageFiles"
+                :key="i"
+                :src="'/images/my-work/' + item"
+              ></v-carousel-item>
+            </v-carousel>
+          </v-row>
+ -->
         </v-flex>
       </v-layout>
     </v-container>

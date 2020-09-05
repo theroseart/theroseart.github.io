@@ -3,6 +3,10 @@
   background-color: green;
 }
 
+.my-work-img{
+  height:150px;
+}
+
 .parallax{
   height: 100%;
 }
