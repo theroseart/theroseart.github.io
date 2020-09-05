@@ -3,8 +3,27 @@
   background-color: green;
 }
 
+#app-bar-logo{
+  margin-right: 5px;
+}
+
 .my-work-img{
   height:150px;
+}
+
+.service-desc-title-txt{
+  background-color: #333333;
+  font-size: 28px;
+}
+
+.service-desc-txt div{
+  font-size:22px;
+  line-height: 30px;
+}
+
+.service-desc-txt{
+  margin-top: 20px;
+  min-height: 180px;
 }
 
 .parallax{
@@ -13,13 +32,20 @@
 
 .banner-sub-title{
   font-size: 50px;
+  font-family: cursive;
   color: black;
   /* text-shadow: 2px 2px 0px white; */
   text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px rgb(255, 207, 86), 0 0 15px rgb(1, 5, 255);
 
 }
 
+[v-cloak] {
+  display: none;
+}
+
 .banner-title{
+  font-family: 'Pacifico', cursive;
+
   font-size: 120px;
   color: red;
   text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px rgb(255, 207, 86), 0 0 15px rgb(1, 5, 255);

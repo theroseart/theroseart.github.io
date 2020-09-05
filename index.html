@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
   <title>The Rose Art Classes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
   <!--List of icons https://material.io/resources/icons/?style=baseline -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.3.8/dist/vuetify.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.3.8/dist/vuetify.min.css" rel="stylesheet">  
   <link href="./main.css" rel="stylesheet">
   
 </head>
@@ -22,6 +24,12 @@
     </v-container>
   </template>
 
+  <!-- 
+    System requrement
+    Calendar/time
+    Packages/fees
+  -->
+
   <template id="home-template">
     <v-container fluid grid-list-xl>
       <v-layout>
@@ -32,7 +40,7 @@
             <h1 class="banner-sub-title">Online classes with personal touch</h1>
           </v-parallax>
 
-          <v-row no-gutters>
+          <v-row no-gutters fluid>
             <v-col cols="3" md="4" class="mt-md-10 mb-md-10">
               <v-card class="mx-auto" max-width="400">
                 <v-img
@@ -42,13 +50,13 @@
                 </v-img>
             
                 <!-- <v-card-subtitle class="pb-0">Number 10</v-card-subtitle> -->
-                <v-card-title>
+                <v-card-title class="service-desc-title-txt">
                   What do we teach?
                 </v-card-title>
           
-                <v-card-text class="text--primary">
+                <v-card-text class="text--primary service-desc-txt">
                   <div>
-                    Art classes will be provided via video conferencing. We teach drawing, painting, mandala art, and henna art design. 
+                    Art classes will be provided via online video conferencing. We teach drawing, painting, mandala art, and henna art design. 
                   </div>
                 </v-card-text>
             
@@ -65,10 +73,10 @@
                   height="200px"
                   src="images/card-2.jpg">
                 </v-img>
-                <v-card-title>
+                <v-card-title class="service-desc-title-txt">
                   Fees and schedule 
                 </v-card-title>
-                <v-card-text class="text--primary">
+                <v-card-text class="text--primary service-desc-txt">
                   <div>
                     Age groups: [4 to 7] and [8 to 12]
                   </div>
@@ -91,11 +99,13 @@
                   height="200px"
                   src="images/card-3.jpg">
                 </v-img>
-                <v-card-title>
+                <v-card-title class="service-desc-title-txt text-center">
                   Get started today
                 </v-card-title>
-                <v-card-text class="text--primary">
-                  <div>Call us: 510 471 8132</div>
+                <v-card-text class="text--primary service-desc-txt">
+                  <div>
+                    Call us: 510 471 8132
+                  </div>
                 </v-card-text>
               </v-card>
             </v-col>
@@ -103,7 +113,7 @@
 
           <v-row>
             <v-col cols="12" Xsm="6" Xoffset-sm="3"  class="mt-md-10 mb-md-10">
-              <h3 class="ml-md-3">Artistic creations of the teacher</h3>
+              <h3 class="ml-md-3">My art gallery</h3>
               <v-card>
                 <v-container fluid>
                   <v-row>
@@ -123,9 +133,9 @@
                         >
                           <template v-slot:placeholder>
                             <v-row
-                              Xclass="fill-height ma-0"
-                              Xalign="center"
-                              Xjustify="center"
+                              class="fill-height ma-0"
+                              align="center"
+                              justify="center"
                             >
                               <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
                             </v-row>
@@ -185,9 +195,11 @@
   <div id="app">
     <v-app>
 
-      <v-app-bar app inverted-scroll>
+      <v-app-bar app Xinverted-scroll Xcolor="transparent" v-cloak>
+        <img id="app-bar-logo" style="width: 2-px;" src="images/logo-1.png"></img>
         <v-toolbar-title>
-          <router-link class="toolbar-title" to="/">The Rose Art Classes</router-link>
+          <router-link class="toolbar-title" to="/">
+            The Rose Art Classes</router-link>
         </v-toolbar-title>
         <!-- <v-spacer></v-spacer>
         <v-btn to="/about" icon>
@@ -199,13 +211,13 @@
         <router-view></router-view>
       </v-main>
 
-      <v-btn v-scroll="onScroll" v-show="fab" 
-        fab dark fixed bottom right color="primary"
-        @click="toTop">
+      <v-btn Xv-scroll="onScroll" v-show="fab" v-cloak
+        fab dark fixed bottom right color="primary" 
+        Xclick="toTop">
         <v-icon>keyboard_arrow_up</v-icon>
       </v-btn>      
 
-      <v-footer  class="font-weight-medium">
+      <v-footer  class="font-weight-medium" v-cloak>
         <v-col class="text-center"cols="12">
           {{ new Date().getFullYear() }} — <strong>The Rose Art Classes</strong>
         </v-col>
