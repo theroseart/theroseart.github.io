@@ -21,7 +21,8 @@ const Home = Vue.component('Home', {
     console.log('Home mounted');
   },
   created() {
-    console.log('Home created');
+    
+    console.log('Home created', this.$vuetify);
   }
 })
 
@@ -51,16 +52,21 @@ const router = new VueRouter({
 
 
 function initVue(){
+  var vuetify = new Vuetify();
+  vuetify.framework.theme.isDark = true;
+  console.log({vuetify});
+
   new Vue({
     el: '#app',
     router,
-    vuetify: new Vuetify(),
+    vuetify,
     data: () => ({
       leftDrawer: false,
       state: {}
     }),
     created: async () => {
       console.log('App created');
+      
       // var data = await init();
       // console.log(data);
       // this.state = data; 

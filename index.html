@@ -26,8 +26,86 @@
     <v-container fluid grid-list-xl>
       <v-layout>
         <v-flex>
-          <h1>Home</h1>
-          <p>This is home.</p>
+          <v-parallax height="500"
+            jumbotron class="parallax" src="images/banner.jpeg">
+            <h1 class="banner-title">The Rose Art Classes</h1>
+            <h1 class="banner-sub-title">[Online classes with personal touch]</h1>
+          </v-parallax>
+
+          <v-row no-gutters>
+            <v-col cols="3" md="4" class="mt-md-10">
+              <v-card class="mx-auto" max-width="400">
+                <v-img
+                  class="white--text align-end"
+                  height="200px"
+                  src="https://cdn.vuetifyjs.com/images/cards/docks.jpg">
+                  <v-card-title>Top 10 Australian beaches</v-card-title>
+                </v-img>
+            
+                <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
+            
+                <v-card-text class="text--primary">
+                  <div>Whitehaven Beach</div>
+            
+                  <div>Whitsunday Island, Whitsunday Islands</div>
+                </v-card-text>
+            
+                <v-card-actions>
+                  <v-btn color="orange" text>Share</v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+
+            <v-col cols="3" md="4" class="mt-md-10">
+              <v-card class="mx-auto" max-width="400">
+                <v-img
+                  class="white--text align-end"
+                  height="200px"
+                  src="https://cdn.vuetifyjs.com/images/cards/docks.jpg">
+                  <v-card-title>Top 10 Australian beaches</v-card-title>
+                </v-img>
+            
+                <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
+            
+                <v-card-text class="text--primary">
+                  <div>Whitehaven Beach</div>
+            
+                  <div>Whitsunday Island, Whitsunday Islands</div>
+                </v-card-text>
+            
+                <v-card-actions>
+                  <v-btn color="orange" text>Share</v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+
+            <v-col cols="3" md="4" class="mt-md-10">
+              <v-card class="mx-auto" max-width="400">
+                <v-img
+                  class="white--text align-end"
+                  height="200px"
+                  src="https://cdn.vuetifyjs.com/images/cards/docks.jpg">
+                  <v-card-title>Top 10 Australian beaches</v-card-title>
+                </v-img>
+            
+                <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
+            
+                <v-card-text class="text--primary">
+                  <div>Whitehaven Beach</div>
+            
+                  <div>Whitsunday Island, Whitsunday Islands</div>
+                </v-card-text>
+            
+                <v-card-actions>
+                  <v-btn color="orange" text>Share</v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+
+
+          </v-row>
+
+
           <div class="test-box"></div>  
           <br>
           <div class="test-box"></div>  
@@ -45,12 +123,11 @@
   <div id="app">
     <v-app>
 
-      <v-app-bar app color="indigo" dark>
-        <v-toolbar-title>The Rose Art Classes</v-toolbar-title>
+      <v-app-bar app >
+        <v-toolbar-title>
+          <router-link class="toolbar-title" to="/">The Rose Art Classes</router-link>
+        </v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-btn to="/" icon>
-          <v-icon>home</v-icon>
-        </v-btn>
         <v-btn to="/about" icon>
           <v-icon>info</v-icon>
         </v-btn>
@@ -64,6 +141,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.3.10/dist/vuetify.min.js"></script>
+  <!-- <script type="module"  src="https://cdn.jsdelivr.net/npm/vuetify@2.3.10/lib/util/colorUtils.js"></script> -->
+  <!-- https://cdn.jsdelivr.net/npm/vuetify@2.3.10/lib/util/colorUtils.js -->
   <script src="https://cdn.jsdelivr.net/npm/vue-router@3.4.3/dist/vue-router.min.js"></script>
   <script src='main.js'></script>
 </body>
