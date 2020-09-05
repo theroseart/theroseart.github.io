@@ -103,14 +103,6 @@
 
           </v-row>
 
-
-          <div class="test-box"></div>  
-          <br>
-          <div class="test-box"></div>  
-          <br>
-          <div class="test-box"></div>  
-          <br>
-
         </v-flex>
       </v-layout>
     </v-container>
@@ -134,6 +126,13 @@
       <v-main>
         <router-view></router-view>
       </v-main>
+
+      <v-footer  class="font-weight-medium">
+        <v-col class="text-center"cols="12">
+          {{ new Date().getFullYear() }} — <strong>The Rose Art Classes</strong>
+        </v-col>
+      </v-footer>
+
     </v-app>
   </div>  
 
