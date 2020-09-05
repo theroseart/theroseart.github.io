@@ -23,3 +23,7 @@
   text-decoration: inherit;
   color: white !important;
 }
+
+.text--primary{
+  font-size: 18px;
+}
