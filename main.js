@@ -114,10 +114,10 @@ function initVue(){
 }
 
 async function init(){
-  var txt = await fetch('/images/my-work-files.txt').then(r => r.text()); 
-  var myWorkImageFiles = txt.split('\n');
-  console.log({myWorkImageFiles});
-  store.state = {...(store.state), myWorkImageFiles};
+  // var txt = await fetch('/images/my-work-files.txt').then(r => r.text()); 
+  // var myWorkImageFiles = txt.split('\n');
+  // console.log({myWorkImageFiles});
+  // store.state = {...(store.state), myWorkImageFiles};
 
   var data = await fetch('/data.json').then(r => r.json()); 
   console.log({data});

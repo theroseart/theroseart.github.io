@@ -74,7 +74,7 @@
                   src="images/card-2.jpg">
                 </v-img>
                 <v-card-title class="service-desc-title-txt">
-                  Fees and schedule 
+                  Age group and schedule 
                 </v-card-title>
                 <v-card-text class="text--primary service-desc-txt">
                   <div>
@@ -83,11 +83,6 @@
                   <div>
                     One hour per week. Call us for adjustable timing.
                   </div>
-                  <div>
-                    Fees: $50 per month OR $15 per class
-                  </div>
-
-
                 </v-card-text>
               </v-card>
             </v-col>
@@ -104,12 +99,64 @@
                 </v-card-title>
                 <v-card-text class="text--primary service-desc-txt">
                   <div>
-                    Call us: 510 471 8132
+                    Call us: 
+                  </div>
+                  <div>
+                    510 471 8132
                   </div>
                 </v-card-text>
               </v-card>
             </v-col>
           </v-row>
+
+
+          <v-row>
+            <v-col>
+              <v-row align="center" justify="center">
+                <v-card class="ma-1 pa-2"  tile>
+                  <v-card-text class="text--primary">
+                    <h2>Payment Plans</h2>
+                  </v-card-text>
+                </v-card>
+              </v-row>
+
+              <v-row align="center" justify="center">
+                <v-card class="ma-3 pa-6 fee-card">
+                  <v-card-text align="center" justify="center" class="text--primary payment-plan-txt">
+                    <h3>Pay per class:</h3>
+                    <h2 class="mt-3">
+                      $15
+                    </h2>
+                  </v-card-text>
+                </v-card>
+
+                <v-card class="ma-3 pa-6 fee-card">
+                  <v-card-text align="center" justify="center" class="text--primary payment-plan-txt">
+                    <h3>Pay per month (4 classes):</h3>
+                    <h2 class="mt-3">
+                      $ 50 
+                    </h2>
+                    <div class="mt-3">[That is $ 12.50 per class]</div>
+                  </v-card-text>
+                </v-card>
+              </v-row>
+            </v-col>    
+          </v-row>
+
+ 
+          <v-row id="free-trial">
+            <v-col>
+              <v-row align="center" justify="center">
+                <v-card class="ma-1 pa-2"  tile>
+                  <v-card-text class="text--primary">
+                    <h2>Free Trial: </h2>
+                  </v-card-text>
+                </v-card>
+              </v-row>
+            </v-col>    
+          </v-row>
+
+
 
           <v-row>
             <v-col cols="12" Xsm="6" Xoffset-sm="3"  class="mt-md-10 mb-md-10">
@@ -238,8 +285,9 @@
           <router-link class="toolbar-title" to="/">
             The Rose Art Classes</router-link>
         </v-toolbar-title>
-        <!-- <v-spacer></v-spacer>
-        <v-btn to="/about" icon>
+        <v-spacer></v-spacer>
+        <v-btn @click="$vuetify.goTo('#free-trial')" rounded color="error" dark>Free Trial</v-btn>
+        <!-- <v-btn to="/about" icon>
           <v-icon>info</v-icon>
         </v-btn> -->
       </v-app-bar>
