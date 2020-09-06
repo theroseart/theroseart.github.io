@@ -113,12 +113,50 @@
 
           <v-row>
             <v-col cols="12" Xsm="6" Xoffset-sm="3"  class="mt-md-10 mb-md-10">
+              <h3 class="ml-md-3">Students art gallery</h3>
+              <v-card>
+                <v-container fluid>
+                  <v-row>
+                    <v-col
+                      v-for="n in this.state.gallery.studentsWork.length"
+                      :key="n"
+                      class="d-flex child-flex"
+                      cols="2"
+                    >
+                      <v-card flat tile class="d-flex">
+                        <v-img
+                          :src="getStudentsWorkImage(n)"
+                          :lazy-src="getStudentsWorkImage(n)"
+                          Xaspect-ratio="1"
+                          class="grey lighten-2 my-work-img"
+                          @click.stop="showStudentsWorkImage(n)"
+                        >
+                          <template v-slot:placeholder>
+                            <v-row
+                              class="fill-height ma-0"
+                              align="center"
+                              justify="center"
+                            >
+                              <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                            </v-row>
+                          </template>
+                        </v-img>
+                      </v-card>
+                    </v-col>
+                  </v-row>
+                </v-container>
+              </v-card>
+            </v-col>
+          </v-row>
+
+          <v-row>
+            <v-col cols="12" Xsm="6" Xoffset-sm="3"  class="mt-md-10 mb-md-10">
               <h3 class="ml-md-3">My art gallery</h3>
               <v-card>
                 <v-container fluid>
                   <v-row>
                     <v-col
-                      v-for="n in state.myWorkImageFiles.length"
+                      v-for="n in this.state.gallery.myWork.length"
                       :key="n"
                       class="d-flex child-flex"
                       cols="2"
@@ -144,28 +182,27 @@
                       </v-card>
                     </v-col>
                   </v-row>
-
-
-                  <v-dialog v-model="myWorkDialog" max-width="800">
-                  <v-card>
-                    <v-img :src="selectedMyWorkImageFile"></v-img>
-                    <v-card-actions>
-                      <v-spacer></v-spacer>
-                      <v-btn
-                        color="green darken-1"
-                        text
-                        @click="myWorkDialog = false"
-                      >
-                        Close
-                      </v-btn>
-                    </v-card-actions>
-                  </v-card>
-                </v-dialog>
-
                 </v-container>
               </v-card>
             </v-col>
           </v-row>
+
+          <v-dialog v-model="galleryDialog" max-width="800">
+            <v-card>
+              <v-img :src="selectedWorkImageFile"></v-img>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn
+                  color="green darken-1"
+                  text
+                  @click="galleryDialog = false"
+                >
+                  Close
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+
 
 
 

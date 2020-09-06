@@ -4,7 +4,14 @@ console.log('START');
 var store = {
   state: {
     initState: 'NOT-DONE',
-    myWorkImageFiles: []
+    gallery:{
+      myWorkFolder: "",
+      myWork: [],
+      studentsWorkFolder: "",
+      studentsWork: []
+    },
+    myWorkImageFiles: [],
+    studentsWorkImageFiles: []
   }
 }
 
@@ -13,18 +20,26 @@ const Home = Vue.component('Home', {
   data: function () {
     return {
       state: store.state,
-      myWorkDialog: false,
-      selectedMyWorkImageFile: 0
+      galleryDialog: false,
+      selectedWorkImageFile: "",
     }
   },
   methods: {
+    showStudentsWorkImage(index){
+      this.selectedWorkImageFile = this.getStudentsWorkImage(index);
+      this.galleryDialog = true;
+    },
+    getStudentsWorkImage(index){
+      // console.log('getMyWorkImage', index);
+      return this.state.gallery.studentsWorkFolder + this.state.gallery.studentsWork[index - 1];
+    },
     showMyWorkImage(index){
-      this.selectedMyWorkImageFile = '/images/my-work/' + this.state.myWorkImageFiles[index - 1];
-      this.myWorkDialog = true;
+      this.selectedWorkImageFile = this.getMyWorkImage(index);
+      this.galleryDialog = true;
     },
     getMyWorkImage(index){
       // console.log('getMyWorkImage', index);
-      return '/images/my-work/' + this.state.myWorkImageFiles[index - 1];
+      return this.state.gallery.myWorkFolder + this.state.gallery.myWork[index - 1];
     }
   },
   mounted() {
@@ -103,6 +118,12 @@ async function init(){
   var myWorkImageFiles = txt.split('\n');
   console.log({myWorkImageFiles});
   store.state = {...(store.state), myWorkImageFiles};
+
+  var data = await fetch('/data.json').then(r => r.json()); 
+  console.log({data});
+  store.state = {...(store.state), gallery: data.gallery};
+
+
 
   // // var data = await fetch('data.json').then(r => r.json());
   // store.state = {...(store.state), fakeList};
