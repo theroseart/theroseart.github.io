@@ -69,8 +69,29 @@
 .toolbar-title {
   text-decoration: inherit;
   color: white !important;
+  font-weight: bold;
 }
 
 .text--primary{
   font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+  .banner-title{
+    font-size: 50px;
+  }
+
+  .banner-sub-title{
+    font-size: 20px;
+  }
+
+  .parallax{
+    max-height: 250px;
+  }
+
+  .service-desc-txt{
+    min-height: auto;
+  }
+  
+  
 }
