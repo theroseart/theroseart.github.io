@@ -104,7 +104,7 @@
                     Call us: 
                   </div>
                   <div>
-                    510 471 8132
+                    510 471 7132
                   </div>
                 </v-card-text>
               </v-card>
@@ -163,7 +163,7 @@
 
           <v-row>
             <v-col cols="12" Xsm="6" Xoffset-sm="3"  class="mt-md-10 mb-md-10">
-              <h3 class="ml-md-3">Students art gallery</h3>
+              <h2 class="ml-3">Students art gallery</h2>
               <v-card>
                 <v-container fluid>
                   <v-row>
@@ -171,9 +171,9 @@
                       v-for="n in this.state.gallery.studentsWork.length"
                       :key="n"
                       class="d-flex child-flex"
-                      cols="2"
+                      Xcols="2"
                     >
-                      <v-card flat tile class="d-flex">
+                      <v-card flat tile class="d-flex" style="max-width: 200px;">
                         <v-img
                           :src="getStudentsWorkImage(n)"
                           :lazy-src="getStudentsWorkImage(n)"
@@ -201,7 +201,7 @@
 
           <v-row>
             <v-col cols="12" Xsm="6" Xoffset-sm="3"  class="mt-md-10 mb-md-10">
-              <h3 class="ml-md-3">My art gallery</h3>
+              <h2 class="ml-3">My art gallery</h2>
               <v-card>
                 <v-container fluid>
                   <v-row>
@@ -209,9 +209,9 @@
                       v-for="n in this.state.gallery.myWork.length"
                       :key="n"
                       class="d-flex child-flex"
-                      cols="2"
+                      Xcols="2"
                     >
-                      <v-card flat tile class="d-flex">
+                      <v-card flat tile class="d-flex" style="max-width: 200px;">
                         <v-img
                           :src="getMyWorkImage(n)"
                           :lazy-src="getMyWorkImage(n)"
